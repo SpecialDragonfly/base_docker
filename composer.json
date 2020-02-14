@@ -1,0 +1,21 @@
+{
+	"name" : "dominic/docker_base",
+	"description" : "Base Docker Project",
+	"license" : "MIT",
+	"require" : {
+		"php" : ">=7.3",
+		"ext-pdo": "*",
+		"robmorgan/phinx" : "dev-master#4c26aeb",
+		"monolog/monolog" : "^2.0",
+		"vlucas/phpdotenv": "^4.1"
+	},
+	"config" : {
+		"process-timeout" : 0,
+		"php" : "7.3"
+	},
+	"scripts" : {
+		"start" : "php -S localhost:8080 -t public",
+		"refresh-database" : "php vendor/bin/phinx migrate;",
+		"create-database": "php bin/create-database.php"
+	}
+}
